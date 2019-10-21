@@ -5,23 +5,37 @@ export const Column = props => {
 
   const {
     size,
+    tablet,
+    mobile,
+    desktop,
     children,
     className
   } = props
 
+  let renderSize = size ? `is-${size}` : undefined
+  renderSize = tablet ? `${renderSize} is-${tablet}-tablet` : renderSize
+  renderSize = mobile ? `${renderSize} is-${mobile}-mobile` : renderSize
+  renderSize = desktop ? `${renderSize} is-${desktop}-desktop` : renderSize
+
   return (
-    <div className={`column is-${size} ${className}`}>
+    <div className={`column ${renderSize} ${className}`}>
       {children}
     </div>
   )
 }
 
 Column.defaultProps = {
-  size: 12,
+  size: undefined,
+  tablet: undefined,
+  mobile: undefined,
+  desktop: undefined,
   className: ''
 }
 
 Column.propTypes = {
+  tablet: PropTypes.number,
+  mobile: PropTypes.number,
+  desktop: PropTypes.number,
   size: PropTypes.number,
   className: PropTypes.string,
   children: PropTypes.node.isRequired
