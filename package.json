@@ -1,11 +1,11 @@
 {
   "name": "react-bulma-io",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "NODE_ENV=production BABEL_ENV=production webpack --progress --color --mode=production && npm run create:lib",
-    "create:lib": "NODE_ENV=production BABEL_ENV=production babel ./src/lib --out-dir ./lib --copy-files --source-maps"
+    "create:lib": "NODE_ENV=production BABEL_ENV=production babel ./src/lib --out-dir ./build --copy-files --source-maps"
   },
   "repository": {
     "type": "git",
