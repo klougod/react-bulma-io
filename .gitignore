@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+/lib
+/dist
 /demo
 
 # misc
