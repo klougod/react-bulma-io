@@ -16,6 +16,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Development folders and files
+reports
 public
 src
 scripts
