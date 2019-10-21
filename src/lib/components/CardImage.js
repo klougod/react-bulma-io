@@ -7,12 +7,15 @@ export const CardImage = props => {
   const {
     className,
     alt,
-    src
+    src,
+    children
   } = props
 
   return (
     <div className="card-image">
-      <Figure src={src} alt={alt} className={className} />
+      {
+        src ? <Figure src={src} alt={alt} className={className} /> : {children}
+      }
     </div>
   )
 }
@@ -26,7 +29,8 @@ CardImage.defaultProps = {
 CardImage.propTypes = {
   className: PropTypes.string,
   alt: PropTypes.string,
-  src: PropTypes.string
+  src: PropTypes.string,
+  children: PropTypes.node
 }
 
 export default CardImage
