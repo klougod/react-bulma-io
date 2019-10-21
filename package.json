@@ -8,6 +8,10 @@
     "demo": "node scripts/demo.js",
     "test": "node scripts/test.js"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/klougod/react-bulma-io.git"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
