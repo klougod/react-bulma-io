@@ -87,11 +87,12 @@ const App = () => (
     <Bulma.Section className="has-background-grey-lighter">
       <Bulma.Columns className="is-centered">
         <Bulma.Column size={8} className="has-text-centered has-background-dark">
-          <Bulma.Dropdown btnTitle="Clicar aqui">
-            <h1>PRIMEIRO ITEM</h1>
-            <h1>SEGUNDO ITEM</h1>
-            <h1>TERCEIRO ITEM</h1>
-            <h1>QUARTO ITEM</h1>
+          <Bulma.Dropdown btnTitle="Dropdown Title">
+            <div>Dropdown Div Item</div>
+            <a href="/">Dropdown Anchor Item</a>
+            <div>Dropdown Div Item</div>
+            <hr />
+            <a href="/">Dropdown Anchor Item</a>
           </Bulma.Dropdown>
         </Bulma.Column>
       </Bulma.Columns>
