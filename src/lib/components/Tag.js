@@ -1,18 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Tag = props => {
-
-  const {
-    color,
-    className,
-    text
-  } = props
-
-  return (
-    <span className={`tag ${color} ${className}`}>{text}</span>
-  )
-}
+export const Tag = ({ color, className, text }) => (
+  <span className={`tag ${color} ${className}`}>{text}</span>
+)
 
 Tag.defaultProps = {
   color: '',

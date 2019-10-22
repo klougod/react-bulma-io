@@ -1,17 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Column = props => {
-
-  const {
-    size,
-    tablet,
-    mobile,
-    desktop,
-    children,
-    className
-  } = props
-
+export const Column = ({ size, tablet, mobile, desktop, children, className }) => {
   let renderSize = size ? `is-${size}` : undefined
   renderSize = tablet ? `${renderSize} is-${tablet}-tablet` : renderSize
   renderSize = mobile ? `${renderSize} is-${mobile}-mobile` : renderSize

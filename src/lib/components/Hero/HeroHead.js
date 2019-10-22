@@ -1,19 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const HeroHead = props => {
-
-  const {
-    className,
-    children
-  } = props
-
-  return (
-    <div className={`hero-head ${className}`}>
-      { children }
-    </div>
-  )
-}
+export const HeroHead = ({ className, children }) => (
+  <div className={`hero-head ${className}`}>
+    { children }
+  </div>
+)
 
 HeroHead.defaultProps = {
   className: ''

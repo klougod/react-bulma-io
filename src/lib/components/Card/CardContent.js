@@ -1,19 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const CardContent = props => {
-
-  const {
-    className,
-    children
-  } = props
-
-  return (
-    <header className={`card-content ${className}`}>
-      { children }
-    </header>
-  )
-}
+export const CardContent = ({ className, children }) => (
+  <header className={`card-content ${className}`}>
+    { children }
+  </header>
+)
 
 CardContent.defaultProps = {
   className: ''

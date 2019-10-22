@@ -1,20 +1,15 @@
 import React, { useRef, Children } from 'react'
 import PropTypes from 'prop-types'
 
-export const Navbar = props => {
-
-  const {
-    className,
-    menuClass,
-    children
-  } = props
-
+export const Navbar = ({ className, menuClass, children }) => {
   const menuRef = useRef(null)
   const childrenArray = Children.toArray(children)
 
   return (
     <nav className={`navbar ${className}`} role="navigation" aria-label="main navigation">
-      { childrenArray.filter(c => c.type.name === "NavbarBrand") }
+      {
+        childrenArray.map(c => c.type.name === "NavbarBrand" && React.cloneElement(c, { menuRef }))
+      }
       <div ref={menuRef} className={`navbar-menu ${menuClass}`}>
         { childrenArray.filter(c => c.type.name === "NavbarStart") }
         { childrenArray.filter(c => c.type.name === "NavbarEnd") }

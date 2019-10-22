@@ -1,20 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Figure = props => {
-
-  const {
-    className,
-    alt,
-    src
-  } = props
-
-  return (
-    <figure className={`image ${className}`}>
-      <img src={src} alt={alt} />
-    </figure>
-  )
-}
+export const Figure = ({ className, alt, src }) => (
+  <figure className={`image ${className}`}>
+    <img src={src} alt={alt} />
+  </figure>
+)
 
 Figure.defaultProps = {
   className: '',

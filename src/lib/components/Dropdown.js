@@ -1,16 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
-export const Dropdown = props => {
-
-  const {
-    className,
-    btnClassName,
-    btnTitle,
-    customBtn,
-    children
-  } = props
-
+export const Dropdown = ({ className, btnClassName, btnTitle, customBtn, children }) => {
   const [toggle, setToggle] = useState(false)
   const wrapperNode = useRef(null)
 

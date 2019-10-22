@@ -1,24 +1,18 @@
-import React from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 
-export const NavbarEnd = props => {
-
-  const {
-    className,
-    children
-  } = props
-
-  return (
-    <div className={`navbar-end ${className}`}>
-      { children.map((item, index) => {
-        return React.cloneElement(item, {
+export const NavbarEnd = ({ className, children }) => (
+  <div className={`navbar-end ${className}`}>
+    {
+      Children.toArray(children).map((item, index) => (
+        React.cloneElement(item, {
           key: index,
           className: `${item.props.className} navbar-item`
         })
-      })}
-    </div>
-  )
-}
+      ))
+    }
+  </div>
+)
 
 NavbarEnd.defaultProps = {
   className: ''
