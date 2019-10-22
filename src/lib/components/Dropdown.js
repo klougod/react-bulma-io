@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Children } from 'react'
 import PropTypes from 'prop-types'
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Dropdown = ({ className, btnClassName, btnTitle, customBtn, children }) => {
   const [toggle, setToggle] = useState(false)
@@ -21,9 +23,9 @@ export const Dropdown = ({ className, btnClassName, btnTitle, customBtn, childre
 
   const Button = () => (
     <button className={`button ${btnClassName}`} aria-haspopup="true" aria-controls="dropdown-menu">
-      <span >{ btnTitle }</span>
+      <span >{btnTitle}</span>
       <span className="icon is-small">
-        \/
+        <FontAwesomeIcon icon={faAngleDown} />
       </span>
     </button>
   )
@@ -31,11 +33,21 @@ export const Dropdown = ({ className, btnClassName, btnTitle, customBtn, childre
   return (
     <div ref={wrapperNode} className={`dropdown ${className} ${toggle && "is-active"}`} onClick={() => setToggle(!toggle)}>
       <div className="dropdown-trigger">
-        { customBtn ? customBtn : <Button /> }
+        {customBtn ? customBtn : <Button />}
       </div>
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
-          { children }
+          {Children.toArray(children).map((item, index) =>
+            item.type !== "hr" ?
+            React.cloneElement(item, {
+              key: index,
+              className: `${item.props.className ? item.props.className : ''}dropdown-item`
+            }) :
+            React.cloneElement(item, {
+              key: index,
+              className: 'dropdown-divider'
+            })
+          )}
         </div>
       </div>
     </div>
