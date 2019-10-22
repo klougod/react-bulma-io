@@ -1,12 +1,11 @@
-import React, { Fragment, useState } from 'react';
-import PropTypes from 'prop-types';
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Swal from 'sweetalert2';
-
+import React, { Fragment, useState } from 'react'
+import PropTypes from 'prop-types'
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Swal from 'sweetalert2'
 
 export const Input = ({ value, label, icon, type, error, name, customInput, placeholder, isRequired, className, onChange, tipMessage }) => {
-  const [showPW, setShowPW] = useState(false);
+  const [showPW, setShowPW] = useState(false)
 
   const Icon = () => (
     <span className="icon is-small is-left">
@@ -78,4 +77,4 @@ Input.propTypes = {
   onChange: PropTypes.func
 }
 
-export default Input;
+export default Input
