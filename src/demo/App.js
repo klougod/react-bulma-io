@@ -3,6 +3,20 @@ import Bulma from '../lib';
 
 const App = () => (
   <Fragment>
+    <strong className="">Menu Example</strong>&nbsp;<Bulma.Tag text="Working" color="is-success"/>
+    <Bulma.Navbar>
+      <Bulma.NavbarBrand>
+        <h1>Bulma Brand Logo</h1>
+      </Bulma.NavbarBrand>
+      <Bulma.NavbarStart>
+        <a href="/">Navbar</a>
+        <a href="/">Start</a>
+      </Bulma.NavbarStart>
+      <Bulma.NavbarEnd>
+        <a href="/">Navbar</a>
+        <a href="/">End</a>
+      </Bulma.NavbarEnd>
+    </Bulma.Navbar>
     <strong className="">Grid Example</strong>&nbsp;<Bulma.Tag text="Working" color="is-success"/>
     <Bulma.Section className="has-background-light">
       <Bulma.Columns className="is-multiline">
