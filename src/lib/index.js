@@ -21,5 +21,8 @@ export { Navbar } from './components'
 export { NavbarBrand } from './components'
 export { NavbarStart } from './components'
 export { NavbarEnd } from './components'
+export { Input } from './components'
+export { Checkbox } from './components'
+export { Button } from './components'
 
 export default Bulma

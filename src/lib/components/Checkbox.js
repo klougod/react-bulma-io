@@ -1,15 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Checkbox = ({ text, checked, name, className, onChange }) => {
-
-  return (
-    <label class="checkbox">
-      <input type="checkbox" className={className} checked={checked} onChange={onChange} name={name} />
-      &nbsp;{ text }
-    </label>
-  )
-}
+export const Checkbox = ({ text, checked, name, className, onChange }) => (
+  <label class="checkbox">
+    <input type="checkbox" className={className} checked={checked} onChange={onChange} name={name} />
+    &nbsp;{ text }
+  </label>
+)
 
 Checkbox.defaultProps = {
   checked: false,
