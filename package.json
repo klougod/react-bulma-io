@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-io",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -12,7 +12,9 @@
     "url": "https://github.com/klougod/react-bulma-io.git"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "vanilla-masker": "^1.2.0"
+  },
   "peerDependencies": {
     "bulma": ">= 0.7.0 < 1",
     "@fortawesome/react-fontawesome": ">= 0.1.0 < 0.2.0",
