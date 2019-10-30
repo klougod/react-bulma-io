@@ -1,10 +1,33 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import VMasker from 'vanilla-masker'
 
-export const Input = ({ value, label, icon, type, error, name, customInput, placeholder, isRequired, className, onChange }) => {
+const applyCellphoneMask = inputName => {
+  VMasker(document.getElementsByName(inputName)).maskPattern('(99) 99999-9999')
+}
+
+const applyCpfMask = inputName => {
+  VMasker(document.getElementsByName(inputName)).maskPattern('999.999.999-99')
+}
+
+export const Input = ({ value, label, icon, type, error, name, customInput, placeholder,
+                        isRequired, className, onChange, mask, tip }) => {
   const [showPW, setShowPW] = useState(false)
+
+  useEffect(() => {
+    switch (mask) {
+      case 'cellphone':
+        applyCellphoneMask(name)
+        break
+      case 'cpf':
+        applyCpfMask(name)
+        break
+      default:
+        break
+    }
+  }, [mask, name])
 
   const Icon = () => (
     <span className="icon is-small is-left">
@@ -25,6 +48,7 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
       <label className="label" htmlFor={name}>
         {label}
         {isRequired && <span className="has-text-danger"> *</span>}
+        {tip}
       </label>
       <div className={`field ${type === "password" && 'has-addons has-addons-right'}`}>
         <div className={`control ${type === "password" && 'is-expanded'} ${icon && 'has-icons-left'}`}>
@@ -46,10 +70,11 @@ Input.defaultProps = {
   value: '',
   label: '',
   type: 'text',
-  icon: faEye,
+  icon: null,
   isRequired: false,
   error: '',
   name: 'input',
+  mask: '',
   placeholder: '',
   customInput: null,
   className: '',
@@ -60,6 +85,7 @@ Input.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   label: PropTypes.string,
+  mask: PropTypes.string,
   placeholder: PropTypes.string,
   icon: PropTypes.any,
   isRequired: PropTypes.bool,
