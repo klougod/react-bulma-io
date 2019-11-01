@@ -24,5 +24,7 @@ export { NavbarEnd } from './components/Navbar/NavbarEnd.js'
 export { Input } from './components/Input.js'
 export { Checkbox } from './components/Checkbox.js'
 export { Button } from './components/Button.js'
+export { Tabs } from './components/Tabs/Tabs.js'
+export { TabLink } from './components/Tabs/TabLink.js'
 
 export default Bulma
