@@ -12,18 +12,18 @@
     "url": "https://github.com/klougod/react-bulma-io.git"
   },
   "license": "MIT",
-  "dependencies": {
-    "vanilla-masker": "^1.2.0"
-  },
   "peerDependencies": {
     "bulma": ">= 0.7.0 < 1",
     "@fortawesome/react-fontawesome": ">= 0.1.0 < 0.2.0",
     "react": ">= 16.0.0 < 17.0.0",
-    "react-dom": ">= 16.0.0 < 17.0.0"
+    "react-dom": ">= 16.0.0 < 17.0.0",
+    "@babel/runtime": ">= 7.5.0",
+    "vanilla-masker": ">= 1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.6.2",
     "@babel/core": "7.6.2",
+    "@babel/runtime": "7.6.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -79,6 +79,7 @@
     "terser-webpack-plugin": "1.4.1",
     "ts-pnp": "1.1.4",
     "url-loader": "2.1.0",
+    "vanilla-masker": "1.2.0",
     "webpack": "4.41.0",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.9",
@@ -147,11 +148,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }
