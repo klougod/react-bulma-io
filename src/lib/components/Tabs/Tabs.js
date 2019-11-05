@@ -26,7 +26,7 @@ export const Tabs = ({ children, className }) => {
           }
         </ul>
       </div>
-      <div style={{ 'borderRadius': '0px', 'marginLeft': '1px', 'width': 'calc(100% - 2px) !important' }}
+      <div style={{ 'borderRadius': '0px', 'marginLeft': '1px', 'width': 'calc(100% - 2px)' }}
         className="column is-12 box" >
         {arrayChildren.filter(c => c.props.isActive)}
       </div>
