@@ -20,7 +20,7 @@ export const Tabs = ({ children, className }) => {
         <ul>
           {
             arrayChildren.map((child, i) => (
-              <TabLink id={`tab-link-${i}`} isActive={child.props.isActive} changeTab={changeTab}
+              <TabLink id={`.${i}`} isActive={child.props.isActive} changeTab={changeTab}
                 key={i} text={child.props.tabName} />
             ))
           }
