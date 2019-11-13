@@ -1,33 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import VMasker from 'vanilla-masker'
-
-const applyCellphoneMask = inputName => {
-  VMasker(document.getElementsByName(inputName)).maskPattern('(99) 99999-9999')
-}
-
-const applyCpfMask = inputName => {
-  VMasker(document.getElementsByName(inputName)).maskPattern('999.999.999-99')
-}
+import MaskedInput from 'react-text-mask'
 
 export const Input = ({ value, label, icon, type, error, name, customInput, placeholder,
                         isRequired, className, onChange, mask, tip }) => {
   const [showPW, setShowPW] = useState(false)
 
-  useEffect(() => {
-    switch (mask) {
-      case 'cellphone':
-        applyCellphoneMask(name)
-        break
-      case 'cpf':
-        applyCpfMask(name)
-        break
-      default:
-        break
-    }
-  }, [mask, name])
 
   const Icon = () => (
     <span className="icon is-small is-left">
@@ -43,6 +23,17 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
     </p>
   )
 
+  const inputMask = () => {
+    switch (mask) {
+      case 'cellphone':
+        return ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+      case 'cpf':
+        return [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+      default:
+        return false
+    }
+  }
+
   return (
     <Fragment>
       <label className="label" htmlFor={name}>
@@ -54,9 +45,17 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
         <div className={`control ${type === "password" && 'is-expanded'} ${icon && 'has-icons-left'}`}>
           {icon && <Icon />}
           {
-            customInput ? customInput : <input value={value} onChange={onChange} name={name}
-              className={`input ${className}`} type={type === "password" ? (!showPW ? "password" : "text") : type}
-              placeholder={placeholder} />
+            customInput ? customInput :
+            <MaskedInput
+              mask={inputMask()}
+              name={name}
+              guide={false}
+              className={`input ${className}`}
+              value={value}
+              type={type === "password" ? (!showPW ? "password" : "text") : type}
+              placeholder={placeholder}
+              onChange={onChange}
+            />
           }
         </div>
         {type === "password" && <EyeIcon />}
