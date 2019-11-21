@@ -1,8 +1,8 @@
-import React, { Fragment, Children } from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const Select = ({ icon, placeholder, className, onChange, children }) => {
+export const Select = ({ icon, placeholder, className, onChange, children, noWrapper }) => {
 
   const Icon = () => (
     <span className="icon is-small is-left">
@@ -11,18 +11,22 @@ export const Select = ({ icon, placeholder, className, onChange, children }) => 
   )
 
   return (
-    <Fragment>
-      <div className='field'>
-        <div className={`control ${icon && 'has-icons-left'}`}>
-          {icon && <Icon />}
-          <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
-            <select>
-              { Children.toArray(children).filter(c => c.type.name === "Option") }
-            </select>
-          </div>
+    noWrapper ?
+    <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
+      <select>
+        { Children.toArray(children).filter(c => c.type.name === "Option") }
+      </select>
+    </div> :
+    <div className='field'>
+      <div className={`control ${icon && 'has-icons-left'}`}>
+        {icon && <Icon />}
+        <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
+          <select>
+            { Children.toArray(children).filter(c => c.type.name === "Option") }
+          </select>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }
 
@@ -31,7 +35,8 @@ Select.defaultProps = {
   icon: null,
   placeholder: '',
   className: '',
-  onChange: null
+  onChange: null,
+  noWrapper: false
 }
 
 Select.propTypes = {
@@ -39,7 +44,8 @@ Select.propTypes = {
   placeholder: PropTypes.string,
   icon: PropTypes.any,
   className: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  noWrapper: PropTypes.bool
 }
 
 export default Select
