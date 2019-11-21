@@ -97,6 +97,18 @@ const App = () => (
         </Bulma.Column>
       </Bulma.Columns>
     </Bulma.Section>
+    <Bulma.Section className="has-background-grey-lighter">
+      <Bulma.Columns className="is-centered">
+        <Bulma.Column size={8} className="has-text-centered has-background-dark">
+          <Bulma.Select className='is-expanded' onChange={e => console.log(e.target.value)}>
+            <Bulma.Option text='option 1' value={1} />
+            <Bulma.Option text='option 2' value={2} />
+            <Bulma.Option text='option 3' value={3} />
+            <Bulma.Option text='option 4' value={4} />
+          </Bulma.Select>
+        </Bulma.Column>
+      </Bulma.Columns>
+    </Bulma.Section>
   </Fragment>
 );
 

@@ -26,5 +26,7 @@ export { Checkbox } from './components/Checkbox.js'
 export { Button } from './components/Button.js'
 export { Tabs } from './components/Tabs/Tabs.js'
 export { TabLink } from './components/Tabs/TabLink.js'
+export { Select } from './components/Select.js'
+export { Option } from './components/Option.js'
 
 export default Bulma

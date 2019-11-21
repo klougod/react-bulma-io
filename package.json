@@ -1,9 +1,9 @@
 {
   "name": "react-bulma-io",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "main": "build/index.js",
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "PORT=2000 node scripts/start.js",
     "build": "NODE_ENV=production BABEL_ENV=production webpack --progress --color --mode=production && npm run create:lib",
     "create:lib": "NODE_ENV=production BABEL_ENV=production babel ./src/lib --out-dir ./build --copy-files --source-maps"
   },
