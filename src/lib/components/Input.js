@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MaskedInput from 'react-text-mask'
 
 export const Input = ({ value, label, icon, type, error, name, customInput, placeholder,
-                        isRequired, className, onChange, mask, tip }) => {
+  isRequired, className, onChange, mask, tip }) => {
   const [showPW, setShowPW] = useState(false)
 
 
@@ -23,14 +23,38 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
     </p>
   )
 
+  const possibleMasks = {
+    cellphone: ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    cpf: [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+  }
+
   const inputMask = () => {
-    switch (mask) {
-      case 'cellphone':
-        return ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
-      case 'cpf':
-        return [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
-      default:
-        return false
+    const selectedMask = possibleMasks[mask];
+    return selectedMask ? selectedMask : false;
+  }
+
+  const verifiedInput = () => {
+    if (mask) {
+      return <MaskedInput
+        mask={inputMask()}
+        name={name}
+        guide={false}
+        className={`input ${className}`}
+        value={value}
+        type={type === "password" ? (!showPW ? "password" : "text") : type}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+    }
+    else {
+      return <input
+        name={name}
+        className={`input ${className}`}
+        value={value}
+        type={type === "password" ? (!showPW ? "password" : "text") : type}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
     }
   }
 
@@ -45,17 +69,7 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
         <div className={`control ${type === "password" && 'is-expanded'} ${icon && 'has-icons-left'}`}>
           {icon && <Icon />}
           {
-            customInput ? customInput :
-            <MaskedInput
-              mask={inputMask()}
-              name={name}
-              guide={false}
-              className={`input ${className}`}
-              value={value}
-              type={type === "password" ? (!showPW ? "password" : "text") : type}
-              placeholder={placeholder}
-              onChange={onChange}
-            />
+            customInput ? customInput : verifiedInput()
           }
         </div>
         {type === "password" && <EyeIcon />}
