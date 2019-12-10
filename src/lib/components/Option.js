@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Option = ({ value, text, className }) => (
-  <option className={className} value={value}>
+export const Option = ({ value, text, className, disabled }) => (
+  <option className={className} value={value} disabled={disabled}>
     {text}
   </option>
 )
@@ -10,13 +10,15 @@ export const Option = ({ value, text, className }) => (
 Option.defaultProps = {
   text: '',
   value: '',
-  className: ''
+  className: '',
+  disabled: false
 }
 
 Option.propTypes = {
   text: PropTypes.string,
   value: PropTypes.any,
-  className: PropTypes.string
+  className: PropTypes.string,
+  disabled: PropTypes.bool
 }
 
 export default Option

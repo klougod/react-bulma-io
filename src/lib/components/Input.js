@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MaskedInput from 'react-text-mask'
 
 export const Input = ({ value, label, icon, type, error, name, customInput, placeholder,
-  isRequired, className, onChange, mask, tip }) => {
+  isRequired, className, onChange, mask, tip, disabled }) => {
   const [showPW, setShowPW] = useState(false)
 
 
@@ -44,6 +44,7 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
         type={type === "password" ? (!showPW ? "password" : "text") : type}
         placeholder={placeholder}
         onChange={onChange}
+        disabled={disabled}
       />
     }
     else {
@@ -54,6 +55,7 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
         type={type === "password" ? (!showPW ? "password" : "text") : type}
         placeholder={placeholder}
         onChange={onChange}
+        disabled={disabled}
       />
     }
   }
@@ -91,7 +93,8 @@ Input.defaultProps = {
   placeholder: '',
   customInput: null,
   className: '',
-  onChange: null
+  onChange: null,
+  disabled: false
 }
 
 Input.propTypes = {
@@ -106,7 +109,8 @@ Input.propTypes = {
   name: PropTypes.string,
   customInput: PropTypes.node,
   className: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool
 }
 
 export default Input
