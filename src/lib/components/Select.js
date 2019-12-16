@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Option from './Option';
+
+const optionType = (<Option />).type
 
 export const Select = ({ icon, placeholder, className, onChange, children, noWrapper }) => {
 
@@ -14,7 +17,7 @@ export const Select = ({ icon, placeholder, className, onChange, children, noWra
     noWrapper ?
     <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
       <select>
-        { children }
+        { Children.toArray(children).filter(c => c.type === optionType) }
       </select>
     </div> :
     <div className='field'>
@@ -22,7 +25,7 @@ export const Select = ({ icon, placeholder, className, onChange, children, noWra
         {icon && <Icon />}
         <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
           <select>
-            { children }
+            { Children.toArray(children).filter(c => c.type === optionType) }
           </select>
         </div>
       </div>
