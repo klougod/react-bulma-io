@@ -1,5 +1,10 @@
 import React, { useRef, Children } from 'react'
 import PropTypes from 'prop-types'
+import { NavbarStart, NavbarEnd, NavbarBrand } from './'
+
+const navbarBrandType = (<NavbarBrand />).type
+const navbarStartType = (<NavbarStart />).type
+const navbarEndType = (<NavbarEnd />).type
 
 export const Navbar = ({ className, menuClass, children }) => {
   const menuRef = useRef(null)
@@ -8,12 +13,12 @@ export const Navbar = ({ className, menuClass, children }) => {
   return (
     <nav className={`navbar ${className}`} role="navigation" aria-label="main navigation">
       {
-        React.cloneElement(childrenArray[0], { menuRef })
+        childrenArray.map(c => c.type === navbarBrandType && React.cloneElement(c, { menuRef }))
       }
       <div ref={menuRef} className={`navbar-menu ${menuClass}`}>
-        {
-          childrenArray.filter((c, i) => i !== 0)
-        }
+        { childrenArray.filter(c => c.type === navbarStartType) }
+        { childrenArray.filter(c => c.type === navbarEndType) }
+
       </div>
     </nav>
   )
