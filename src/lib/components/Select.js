@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -14,7 +14,7 @@ export const Select = ({ icon, placeholder, className, onChange, children, noWra
     noWrapper ?
     <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
       <select>
-        { Children.toArray(children).filter(c => c.type.name === "Option") }
+        { children }
       </select>
     </div> :
     <div className='field'>
@@ -22,7 +22,7 @@ export const Select = ({ icon, placeholder, className, onChange, children, noWra
         {icon && <Icon />}
         <div className={`select ${className}`} placeholder={placeholder} onChange={onChange}>
           <select>
-            { Children.toArray(children).filter(c => c.type.name === "Option") }
+            { children }
           </select>
         </div>
       </div>

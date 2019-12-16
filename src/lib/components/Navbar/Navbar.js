@@ -8,11 +8,12 @@ export const Navbar = ({ className, menuClass, children }) => {
   return (
     <nav className={`navbar ${className}`} role="navigation" aria-label="main navigation">
       {
-        childrenArray.map(c => c.type.name === "NavbarBrand" && React.cloneElement(c, { menuRef }))
+        React.cloneElement(childrenArray[0], { menuRef })
       }
       <div ref={menuRef} className={`navbar-menu ${menuClass}`}>
-        { childrenArray.filter(c => c.type.name === "NavbarStart") }
-        { childrenArray.filter(c => c.type.name === "NavbarEnd") }
+        {
+          childrenArray.filter((c, i) => i !== 0)
+        }
       </div>
     </nav>
   )

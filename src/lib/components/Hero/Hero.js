@@ -1,11 +1,9 @@
-import React, { Children } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 export const Hero = ({ className, children }) => (
   <section className={`hero ${className}`}>
-    { Children.toArray(children).filter(c => c.type.name === "HeroHead") }
-    { Children.toArray(children).filter(c => c.type.name === "HeroBody") }
-    { Children.toArray(children).filter(c => c.type.name === "HeroFoot") }
+    {children}
   </section>
 )
 
