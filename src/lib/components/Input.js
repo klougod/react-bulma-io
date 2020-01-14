@@ -62,11 +62,13 @@ export const Input = ({ value, label, icon, type, error, name, customInput, plac
 
   return (
     <Fragment>
-      <label className="label" htmlFor={name}>
-        {label}
-        {isRequired && <span className="has-text-danger"> *</span>}
-        {tip}
-      </label>
+      {label &&
+        <label className="label" htmlFor={name}>
+          {label}
+          {isRequired && <span className="has-text-danger"> *</span>}
+          {tip}
+        </label>
+      }
       <div className={`field ${type === "password" && 'has-addons has-addons-right'}`}>
         <div className={`control ${type === "password" && 'is-expanded'} ${icon && 'has-icons-left'}`}>
           {icon && <Icon />}
