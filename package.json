@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-io",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "main": "build/index.js",
   "scripts": {
     "start": "PORT=2000 node scripts/start.js",
