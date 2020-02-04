@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Checkbox = ({ text, checked, name, className, onChange }) => (
-  <label className="checkbox">
+export const Checkbox = ({ text, checked, name, className, wrapperClass, onChange }) => (
+  <div className={`checkbox ${wrapperClass}`}>
     <input type="checkbox" className={className} checked={checked} onChange={onChange} name={name} />
-    &nbsp;{ text }
-  </label>
+    <label>&nbsp;{ text }</label>
+  </div>
 )
 
 Checkbox.defaultProps = {
@@ -13,7 +13,8 @@ Checkbox.defaultProps = {
   onChange: null,
   name: '',
   text: '',
-  className: ''
+  className: '',
+  wrapperClass: ''
 }
 
 Checkbox.propTypes = {
@@ -21,7 +22,8 @@ Checkbox.propTypes = {
   onChange: PropTypes.func,
   name: PropTypes.string,
   text: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  wrapperClass: PropTypes.string
 }
 
 export default Checkbox;
