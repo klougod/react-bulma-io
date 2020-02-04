@@ -109,6 +109,17 @@ const App = () => (
         </Bulma.Column>
       </Bulma.Columns>
     </Bulma.Section>
+    <strong className="">Checkbox Example</strong>&nbsp;<Bulma.Tag text="Working" color="is-success"/>
+    <Bulma.Section className="has-background-white-ter">
+      <Bulma.Columns className="is-centered">
+        <Bulma.Column size={6} className="has-text-centered">
+          <Bulma.Checkbox text='checkbox' />
+        </Bulma.Column>
+        <Bulma.Column size={6} className="has-text-centered">
+          <Bulma.Checkbox text='checkbox' checked />
+        </Bulma.Column>
+      </Bulma.Columns>
+    </Bulma.Section>
   </Fragment>
 );
 
