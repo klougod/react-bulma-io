@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 export const Checkbox = ({ text, checked, name, className, wrapperClass, onChange }) => (
   <div className={`checkbox ${wrapperClass}`}>
-    <input type="checkbox" className={className} checked={checked} onChange={onChange} name={name} />
-    <label>&nbsp;{ text }</label>
+    <input type="checkbox" id='bulma-io-checkbox' className={className} checked={checked} onChange={onChange} name={name} />
+    <label htmlFor='bulma-io-checkbox' onChange={onChange}>&nbsp;{ text }</label>
   </div>
 )
 
