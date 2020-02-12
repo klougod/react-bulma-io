@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Option component test should render disabled 1`] = `
+<option
+  className=""
+  disabled={true}
+  value=""
+/>
+`;
+
+exports[`Option component test should render with props 1`] = `
+<option
+  className="optionClass"
+  disabled={false}
+  value="option value"
+>
+  option text
+</option>
+`;
+
+exports[`Option component test should render without crash with option 1`] = `
+<option
+  className=""
+  disabled={false}
+  value=""
+/>
+`;
