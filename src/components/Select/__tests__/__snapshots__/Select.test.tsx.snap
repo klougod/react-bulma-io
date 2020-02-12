@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component test should render without crash with children elements 1`] = `
+<div
+  className="field"
+>
+  <div
+    className="control has-icons-left"
+  >
+    <Component
+      icon={
+        Object {
+          "icon": Array [
+            512,
+            512,
+            Array [],
+            "f042",
+            "M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z",
+          ],
+          "iconName": "adjust",
+          "prefix": "fas",
+        }
+      }
+    />
+    <div
+      className="select "
+      onChange={null}
+      placeholder=""
+    >
+      <select>
+        <Component
+          className=""
+          disabled={false}
+          key=".0"
+          text=""
+          value=""
+        />
+        <Component
+          className=""
+          disabled={false}
+          key=".1"
+          text=""
+          value=""
+        />
+        <Component
+          className=""
+          disabled={false}
+          key=".2"
+          text=""
+          value=""
+        />
+      </select>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select component test should render without crash with wrapper 1`] = `
+<div
+  className="field"
+>
+  <div
+    className="control null"
+  >
+    <div
+      className="select "
+      onChange={null}
+      placeholder=""
+    >
+      <select />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select component test should render without crash with wrapper 2`] = `
+<div
+  className="select "
+  onChange={null}
+  placeholder=""
+>
+  <select>
+    <Component
+      className=""
+      disabled={false}
+      key=".0"
+      text=""
+      value=""
+    />
+    <Component
+      className=""
+      disabled={false}
+      key=".1"
+      text=""
+      value=""
+    />
+    <Component
+      className=""
+      disabled={false}
+      key=".2"
+      text=""
+      value=""
+    />
+  </select>
+</div>
+`;
