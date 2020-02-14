@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section component test should render without crash with props 1`] = `
+<section
+  className="section sectionCLass"
+/>
+`;
+
+exports[`Section component test should render without crash without props 1`] = `
+<section
+  className="section "
+/>
+`;
