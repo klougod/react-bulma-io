@@ -22,7 +22,7 @@ TabLink.defaultProps = {
   id: '',
   text: '',
   isActive: false,
-  changeTab: null
+  changeTab: () => {}
 }
 
 TabLink.propTypes = {

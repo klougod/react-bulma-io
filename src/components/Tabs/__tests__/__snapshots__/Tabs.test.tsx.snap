@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component test should render without crash with wrapper 1`] = `
+<Fragment>
+  <div
+    className="tabs "
+  >
+    <ul />
+  </div>
+  <div
+    className="column is-12 box"
+    style={
+      Object {
+        "borderRadius": "0px",
+        "marginLeft": "1px",
+        "width": "calc(100% - 2px)",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`Tabs component test should render without crash with wrapper 2`] = `
+<Fragment>
+  <div
+    className="tabs "
+  >
+    <ul>
+      <Component
+        changeTab={[Function]}
+        className=""
+        id=".0"
+        isActive={false}
+        key="0"
+        text=""
+      />
+      <Component
+        changeTab={[Function]}
+        className=""
+        id=".1"
+        isActive={false}
+        key="1"
+        text=""
+      />
+      <Component
+        changeTab={[Function]}
+        className=""
+        id=".2"
+        isActive={false}
+        key="2"
+        text=""
+      />
+    </ul>
+  </div>
+  <div
+    className="column is-12 box"
+    style={
+      Object {
+        "borderRadius": "0px",
+        "marginLeft": "1px",
+        "width": "calc(100% - 2px)",
+      }
+    }
+  />
+</Fragment>
+`;
