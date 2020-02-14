@@ -11,7 +11,7 @@ Container.defaultProps = {
 
 Container.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export default Container
