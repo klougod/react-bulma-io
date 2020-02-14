@@ -11,7 +11,7 @@ describe('NavbarEnd component test', function () {
 
   it('should render without crash with props', function () {
     const navbarEndMockProps = {
-      className: 'navbarEnd CLass',
+      className: 'navbarEnd CLass'
     }
     const navbarEndMock = Enzyme.shallow(<NavbarEnd {...navbarEndMockProps} />)
     expect(navbarEndMock).toMatchSnapshot()

@@ -11,7 +11,7 @@ describe('Section component test', function () {
 
   it('should render without crash with props', function () {
     const sectionMockProps = {
-      className: 'sectionCLass',
+      className: 'sectionCLass'
     }
     const sectionMock = Enzyme.shallow(<Section {...sectionMockProps} />)
     expect(sectionMock).toMatchSnapshot()

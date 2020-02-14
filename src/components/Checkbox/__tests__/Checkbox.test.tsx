@@ -21,8 +21,21 @@ describe('Checkbox component test', function () {
   it('should call onchange function prop if input changes', function () {
     const checkboxMockProps = { onChange: jest.fn() }
     const checkboxMock = Enzyme.shallow(<Checkbox {...checkboxMockProps} />)
-    expect(checkboxMock.find('input').at(0).prop('onChange')).toHaveBeenCalledTimes(0)
-    checkboxMock.find('input').at(0).simulate('change', { target: {} })
-    expect(checkboxMock.find('input').at(0).prop('onChange')).toHaveBeenCalledTimes(1)
+    expect(
+      checkboxMock
+        .find('input')
+        .at(0)
+        .prop('onChange')
+    ).toHaveBeenCalledTimes(0)
+    checkboxMock
+      .find('input')
+      .at(0)
+      .simulate('change', { target: {} })
+    expect(
+      checkboxMock
+        .find('input')
+        .at(0)
+        .prop('onChange')
+    ).toHaveBeenCalledTimes(1)
   })
 })

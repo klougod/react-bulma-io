@@ -15,7 +15,7 @@ describe('Column component test', function () {
       size: 2,
       mobile: 3,
       tablet: 4,
-      desktop: 5,
+      desktop: 5
     }
     const columnMock = Enzyme.shallow(<Column {...columnMockProps} />)
     expect(columnMock).toMatchSnapshot()

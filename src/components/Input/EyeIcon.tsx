@@ -5,11 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const EyeIcon = ({ showPw, onClick }: any) => (
   <p className='control'>
-    <button
-      className='button'
-      tabIndex={-1}
-      onClick={onClick}
-    >
+    <button className='button' tabIndex={-1} onClick={onClick}>
       <FontAwesomeIcon icon={showPw ? faEyeSlash : faEye} />
     </button>
   </p>

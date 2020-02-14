@@ -11,7 +11,7 @@ describe('Columns component test', function () {
 
   it('should render without crash with props', function () {
     const columnsMockProps = {
-      className: 'columnsCLass',
+      className: 'columnsCLass'
     }
     const columnsMock = Enzyme.shallow(<Columns {...columnsMockProps} />)
     expect(columnsMock).toMatchSnapshot()

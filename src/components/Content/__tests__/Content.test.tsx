@@ -11,7 +11,7 @@ describe('Content component test', function () {
 
   it('should render without crash with props', function () {
     const contentMockProps = {
-      className: 'contentCLass',
+      className: 'contentCLass'
     }
     const contentMock = Enzyme.shallow(<Content {...contentMockProps} />)
     expect(contentMock).toMatchSnapshot()

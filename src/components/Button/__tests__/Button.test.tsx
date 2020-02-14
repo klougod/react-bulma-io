@@ -28,15 +28,31 @@ describe('Button component test', function () {
     const buttonMock = Enzyme.shallow(<Button {...buttonMockProps} />)
     // the line below was added just to remove a branch in coverage, jest coverage
     // was complanning about defaultProps onClick function never being called
-    buttonMock.find('button').at(0).simulate('click', {target: {}})
+    buttonMock
+      .find('button')
+      .at(0)
+      .simulate('click', { target: {} })
     expect(buttonMock).toMatchSnapshot()
   })
 
   it('should call onclick function prop if button is clicked', function () {
     const buttonMockProps = { onClick: jest.fn() }
     const buttonMock = Enzyme.shallow(<Button {...buttonMockProps} />)
-    expect(buttonMock.find('button').at(0).prop('onClick')).toHaveBeenCalledTimes(0)
-    buttonMock.find('button').at(0).simulate('click', {target: {}})
-    expect(buttonMock.find('button').at(0).prop('onClick')).toHaveBeenCalledTimes(1)
+    expect(
+      buttonMock
+        .find('button')
+        .at(0)
+        .prop('onClick')
+    ).toHaveBeenCalledTimes(0)
+    buttonMock
+      .find('button')
+      .at(0)
+      .simulate('click', { target: {} })
+    expect(
+      buttonMock
+        .find('button')
+        .at(0)
+        .prop('onClick')
+    ).toHaveBeenCalledTimes(1)
   })
 })

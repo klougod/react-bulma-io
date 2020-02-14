@@ -13,7 +13,9 @@ describe('CardHeader component test', function () {
     const cardHeaderMockProps = {
       className: 'cardHeader CLass'
     }
-    const cardHeaderMock = Enzyme.shallow(<CardHeader {...cardHeaderMockProps} />)
+    const cardHeaderMock = Enzyme.shallow(
+      <CardHeader {...cardHeaderMockProps} />
+    )
     expect(cardHeaderMock).toMatchSnapshot()
   })
 })

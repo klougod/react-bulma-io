@@ -11,7 +11,7 @@ describe('Footer component test', function () {
 
   it('should render without crash with props', function () {
     const footerMockProps = {
-      className: 'footerCLass',
+      className: 'footerCLass'
     }
     const footerMock = Enzyme.shallow(<Footer {...footerMockProps} />)
     expect(footerMock).toMatchSnapshot()

@@ -13,7 +13,9 @@ describe('CardContent component test', function () {
     const cardContentMockProps = {
       className: 'cardContent CLass'
     }
-    const cardContentMock = Enzyme.shallow(<CardContent {...cardContentMockProps} />)
+    const cardContentMock = Enzyme.shallow(
+      <CardContent {...cardContentMockProps} />
+    )
     expect(cardContentMock).toMatchSnapshot()
   })
 })

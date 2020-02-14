@@ -116,7 +116,9 @@ export const Input = ({
           {icon && <Icon />}
           {customInput ? customInput : verifiedInput()}
         </div>
-        {type === 'password' && <EyeIcon showPw={showPw} onClick={handleEyeIconClick} />}
+        {type === 'password' && (
+          <EyeIcon showPw={showPw} onClick={handleEyeIconClick} />
+        )}
       </div>
       <p className='help is-danger'>{error}</p>
     </Fragment>

@@ -11,7 +11,7 @@ describe('HeroFoot component test', function () {
 
   it('should render without crash with props', function () {
     const heroFootMockProps = {
-      className: 'heroFoot CLass',
+      className: 'heroFoot CLass'
     }
     const heroFootMock = Enzyme.shallow(<HeroFoot {...heroFootMockProps} />)
     expect(heroFootMock).toMatchSnapshot()
