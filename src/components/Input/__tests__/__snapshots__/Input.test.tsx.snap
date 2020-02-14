@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component test should render without crash without props 1`] = `
+<Fragment>
+  <div
+    className="field false"
+  >
+    <div
+      className="control false null"
+    >
+      <input
+        className="input "
+        disabled={false}
+        name="input"
+        onChange={null}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <p
+    className="help is-danger"
+  />
+</Fragment>
+`;
