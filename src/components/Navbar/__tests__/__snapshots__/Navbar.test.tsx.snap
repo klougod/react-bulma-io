@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component test should render without crash 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar "
+  role="navigation"
+>
+  <div
+    className="navbar-menu "
+  />
+</nav>
+`;
+
+exports[`Navbar component test should render without crash with correct children 1`] = `
+<nav
+  aria-label="main navigation"
+  className="navbar heroClass"
+  role="navigation"
+>
+  <Component
+    className=""
+    key=".0"
+    menuRef={
+      Object {
+        "current": null,
+      }
+    }
+  />
+  <div
+    className="navbar-menu heroMenuClass"
+  >
+    <Component
+      className=""
+      key=".1"
+    />
+    <Component
+      className=""
+      key=".2"
+    />
+  </div>
+</nav>
+`;

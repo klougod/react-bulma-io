@@ -38,7 +38,7 @@ Navbar.defaultProps = {
 Navbar.propTypes = {
   className: PropTypes.string,
   menuClass: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export { Navbar, NavbarBrand, NavbarEnd, NavbarStart }
