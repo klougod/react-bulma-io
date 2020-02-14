@@ -4,5 +4,21 @@ node_js:
 cache: yarn
 install:
   - yarn install
-script:
-  - yarn build:prod
+jobs:
+  include:
+    - stage: Build and test
+      script:
+        - yarn build:prod
+    - stage: npm release
+      script: yarn build
+      deploy:
+        provider: npm
+        email: '$NPM_EMAIL'
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true
+        on:
+          tags: true
+branches:
+  only:
+    - master
+    - /^v[0-9]+.*$/
