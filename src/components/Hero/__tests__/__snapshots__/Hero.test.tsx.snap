@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component test should render without crash 1`] = `
+<section
+  className="hero "
+/>
+`;
+
+exports[`Hero component test should render without crash with correct children 1`] = `
+<section
+  className="hero heroClass"
+>
+  <Component
+    className=""
+    key=".0"
+  />
+  <Component
+    className=""
+    key=".1"
+  />
+  <Component
+    className=""
+    key=".2"
+  />
+</section>
+`;
