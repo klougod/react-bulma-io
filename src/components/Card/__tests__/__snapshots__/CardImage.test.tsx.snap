@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardImage component test should render without crash with props 1`] = `
+<div
+  className="card-image"
+>
+  <Component
+    alt="image alt"
+    className="cardImageCLass"
+    src="imageSrcUrl"
+  />
+</div>
+`;
+
+exports[`CardImage component test should render without crash without props 1`] = `
+<div
+  className="card-image"
+>
+  <Component />
+</div>
+`;

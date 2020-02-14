@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Column component test should render without crash with props 1`] = `
+<div
+  className="column is-2 is-4-tablet is-3-mobile is-5-desktop columnCLass"
+/>
+`;
+
+exports[`Column component test should render without crash without props 1`] = `
+<div
+  className="column  "
+/>
+`;

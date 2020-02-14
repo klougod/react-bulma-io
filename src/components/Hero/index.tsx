@@ -29,7 +29,7 @@ Hero.defaultProps = {
 
 Hero.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export default Hero

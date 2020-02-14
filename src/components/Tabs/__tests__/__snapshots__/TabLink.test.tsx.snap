@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabLink component test should render active 1`] = `
+<li
+  className="is-active"
+>
+  <a
+    className="is-size-4-tablet is-size-6-mobile"
+    id=""
+    onClick={[Function]}
+    style={
+      Object {
+        "padding": "0.5em 0.2em !important",
+      }
+    }
+  />
+</li>
+`;
+
+exports[`TabLink component test should render with props 1`] = `
+<li
+  className=""
+>
+  <a
+    className="is-size-4-tablet is-size-6-mobile"
+    id="tabLinkId"
+    onClick={[Function]}
+    style={
+      Object {
+        "padding": "0.5em 0.2em !important",
+      }
+    }
+  >
+    tabLink text
+  </a>
+</li>
+`;
+
+exports[`TabLink component test should render without crash with tabLink 1`] = `
+<li
+  className=""
+>
+  <a
+    className="is-size-4-tablet is-size-6-mobile"
+    id=""
+    onClick={[Function]}
+    style={
+      Object {
+        "padding": "0.5em 0.2em !important",
+      }
+    }
+  />
+</li>
+`;

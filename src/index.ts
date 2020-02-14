@@ -1,4 +1,3 @@
-import * as Bulma from './components'
 export { Columns } from './components/Columns'
 export { Column } from './components/Column'
 export { Section } from './components/Section'
@@ -28,5 +27,3 @@ export { Tabs } from './components/Tabs'
 export { TabLink } from './components/Tabs/TabLink'
 export { Select } from './components/Select'
 export { Option } from './components/Select/Option'
-
-export default Bulma

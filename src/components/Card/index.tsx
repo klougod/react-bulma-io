@@ -34,7 +34,7 @@ Card.defaultProps = {
 
 Card.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export { CardHeader, CardImage, CardContent, CardFooter }

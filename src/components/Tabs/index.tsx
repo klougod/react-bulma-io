@@ -55,7 +55,7 @@ Tabs.defaultProps = {
 
 Tabs.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export { TabLink, Tabs }

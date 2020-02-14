@@ -2,7 +2,7 @@ import React, { Children, ReactElement } from 'react'
 import PropTypes from 'prop-types'
 
 import Option from './Option'
-import Icon from './Icon'
+import Icon from '../Icon'
 
 const optionType = (<Option />).type
 

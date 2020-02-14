@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavbarStart component test should render without crash with props 1`] = `
+<div
+  className="navbar-start navbarStart CLass"
+/>
+`;
+
+exports[`NavbarStart component test should render without crash without props 1`] = `
+<div
+  className="navbar-start "
+/>
+`;

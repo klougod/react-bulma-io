@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component test should render without crash with props 1`] = `
+<div
+  className="dropdown dropdownClass false"
+  onClick={[Function]}
+>
+  <div
+    className="dropdown-trigger"
+  >
+    <Button />
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dropdown component test should render without crash without props 1`] = `
+<div
+  className="dropdown  false"
+  onClick={[Function]}
+>
+  <div
+    className="dropdown-trigger"
+  >
+    <Button />
+  </div>
+  <div
+    className="dropdown-menu"
+    id="dropdown-menu"
+    role="menu"
+  >
+    <div
+      className="dropdown-content"
+    />
+  </div>
+</div>
+`;
