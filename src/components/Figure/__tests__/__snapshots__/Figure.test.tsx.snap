@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Figure component test should render without crash with props 1`] = `
+<figure
+  className="image figureCLass"
+>
+  <img
+    alt="image alt"
+    src="imageSrcUrl"
+  />
+</figure>
+`;
+
+exports[`Figure component test should render without crash without props 1`] = `
+<figure
+  className="image "
+>
+  <img
+    alt="image does not have alt"
+    src="https://bulma.io/images/placeholders/128x128.png"
+  />
+</figure>
+`;
