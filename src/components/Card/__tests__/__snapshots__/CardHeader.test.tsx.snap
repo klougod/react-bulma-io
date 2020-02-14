@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader component test should render without crash with props 1`] = `
+<header
+  className="card-header cardHeader CLass"
+/>
+`;
+
+exports[`CardHeader component test should render without crash without props 1`] = `
+<header
+  className="card-header "
+/>
+`;

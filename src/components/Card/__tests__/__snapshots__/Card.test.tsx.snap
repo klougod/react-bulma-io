@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component test should render without crash 1`] = `
+<div
+  className="card "
+/>
+`;
+
+exports[`Card component test should render without crash with correct children 1`] = `
+<div
+  className="card cardClass"
+>
+  <Component
+    className=""
+    key=".0"
+  />
+  <Component
+    alt=""
+    className=""
+    key=".2"
+    src=""
+  />
+  <Component
+    className=""
+    key=".1"
+  />
+  <Component
+    className=""
+    key=".3"
+  />
+</div>
+`;
