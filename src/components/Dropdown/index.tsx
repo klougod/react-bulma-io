@@ -87,7 +87,7 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   btnClassName: PropTypes.string,
   btnTitle: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export default Dropdown
