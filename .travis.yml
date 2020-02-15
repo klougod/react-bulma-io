@@ -8,16 +8,18 @@ jobs:
   include:
     - stage: Build and test
       script:
-        - yarn build:prod
+        - yarn install
+        - yarn test
+        - yarn build
     - stage: npm release
-      script: yarn build
+      script: yarn build:prod
       deploy:
         provider: npm
         email: '$NPM_EMAIL'
         api_key: '$NPM_TOKEN'
         skip_cleanup: true
         on:
-          tags: true
+          tags: next
 branches:
   only:
     - master
