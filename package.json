@@ -1,7 +1,7 @@
 {
   "name": "react-bulma-io",
-  "version": "0.5.1",
-  "description": "A simple react component library with wrappers for the bulma framework",
+  "version": "0.5.5",
+  "description": "A simple react component library with wrappers for bulma style sheet framework",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
@@ -73,5 +73,8 @@
   },
   "dependencies": {
     "enzyme-to-json": "^3.4.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
