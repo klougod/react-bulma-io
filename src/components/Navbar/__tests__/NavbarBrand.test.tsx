@@ -12,9 +12,11 @@ describe('NavbarEnd component test', function () {
   it('should render without crash with props', function () {
     const navbarBrandMockProps = {
       className: 'navbarBrand CLass',
-      menuRef: 'navbarBrand',
+      menuRef: 'navbarBrand'
     }
-    const navbarBrandMock = Enzyme.shallow(<NavbarBrand {...navbarBrandMockProps} />)
+    const navbarBrandMock = Enzyme.shallow(
+      <NavbarBrand {...navbarBrandMockProps} />
+    )
     expect(navbarBrandMock).toMatchSnapshot()
   })
 
