@@ -20,7 +20,7 @@ Button.defaultProps = {
 Button.propTypes = {
   isLoading: PropTypes.bool,
   onChange: PropTypes.func,
-  text: PropTypes.string,
+  text: PropTypes.any,
   className: PropTypes.string
 }
 
