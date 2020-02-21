@@ -113,7 +113,7 @@ export const Input = ({
           className={`control ${type === 'password' && 'is-expanded'} ${icon &&
             'has-icons-left'}`}
         >
-          {icon && <Icon />}
+          {icon && <Icon icon={icon} />}
           {customInput ? customInput : verifiedInput()}
         </div>
         {type === 'password' && (

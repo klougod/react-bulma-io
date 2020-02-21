@@ -1,7 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NavbarEnd component test should render without crash with children 1`] = `
+<div
+  className="navbar-brand "
+>
+  <h1
+    className="undefined navbar-item"
+    key="0"
+  >
+    NavbarBrand
+  </h1>
+  <NavBurger />
+</div>
+`;
+
+exports[`NavbarEnd component test should render without crash with props 1`] = `
+<div
+  className="navbar-brand navbarBrand CLass"
+>
+  <NavBurger />
+</div>
+`;
+
 exports[`NavbarEnd component test should render without crash without props 1`] = `
 <div
-  className="navbar-end "
-/>
+  className="navbar-brand "
+>
+  <NavBurger />
+</div>
 `;
