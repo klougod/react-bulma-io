@@ -2,14 +2,15 @@ import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: ReactNode
-  isLoading?: Boolean
+  isLoading?: boolean
   onClick?: () => void
 }
 
-export const Button = ({ className, text, isLoading, onClick }: ButtonProps) => (
+export const Button = ({ className, text, isLoading, onClick, ...rest }: ButtonProps) => (
   <button
     onClick={onClick}
     className={`button ${className} ${isLoading ? 'is-loading' : ''}`}
+    {...rest}
   >
     {text}
   </button>
