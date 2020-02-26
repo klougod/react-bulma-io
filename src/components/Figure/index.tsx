@@ -1,6 +1,9 @@
 import React, { ImgHTMLAttributes } from 'react'
 
-export const Figure = ({ className, ...rest}: ImgHTMLAttributes<HTMLImageElement>) => (
+export const Figure = ({
+  className,
+  ...rest
+}: ImgHTMLAttributes<HTMLImageElement>) => (
   <figure className={`image ${className}`}>
     <img {...rest} />
   </figure>

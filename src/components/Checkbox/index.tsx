@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, ReactNode } from 'react'
 
-interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement>{
+interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean
   onChange?: () => void
   text?: ReactNode

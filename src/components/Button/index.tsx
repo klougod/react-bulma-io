@@ -6,7 +6,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void
 }
 
-export const Button = ({ className, text, isLoading, onClick, ...rest }: ButtonProps) => (
+export const Button = ({
+  className,
+  text,
+  isLoading,
+  onClick,
+  ...rest
+}: ButtonProps) => (
   <button
     onClick={onClick}
     className={`button ${className} ${isLoading ? 'is-loading' : ''}`}

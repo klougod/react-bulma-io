@@ -16,8 +16,39 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const withMask = (input: any, mask: string) => () => {
   const possibleMasks = {
-    cellphone: ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    cpf: [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+    cellphone: [
+      '(',
+      /[1-9]/,
+      /\d/,
+      ')',
+      ' ',
+      /\d/,
+      /\d/,
+      /\d/,
+      /\d/,
+      /\d/,
+      '-',
+      /\d/,
+      /\d/,
+      /\d/,
+      /\d/
+    ],
+    cpf: [
+      /\d/,
+      /\d/,
+      /\d/,
+      '.',
+      /\d/,
+      /\d/,
+      /\d/,
+      '.',
+      /\d/,
+      /\d/,
+      /\d/,
+      '-',
+      /\d/,
+      /\d/
+    ]
   }
 
   const inputMask = () => {
@@ -31,12 +62,27 @@ export const withMask = (input: any, mask: string) => () => {
     mask: inputMask()
   }
 
-  return <MaskedInput { ...inputProps } />
+  return <MaskedInput {...inputProps} />
 }
 
-export const Input: FC<InputProps> = ({ label, icon, error, customInput, isRequired, mask, tip, className, type, ...rest }: InputProps) => {
-  const fieldClass = `field ${type === 'password' ? 'has-addons has-addons-right' : ''}`
-  const controlClass = `control ${type === 'password' ? 'is-expanded' : ''} ${icon ? 'has-icons-left' : ''}`
+export const Input: FC<InputProps> = ({
+  label,
+  icon,
+  error,
+  customInput,
+  isRequired,
+  mask,
+  tip,
+  className,
+  type,
+  ...rest
+}: InputProps) => {
+  const fieldClass = `field ${
+    type === 'password' ? 'has-addons has-addons-right' : ''
+  }`
+  const controlClass = `control ${type === 'password' ? 'is-expanded' : ''} ${
+    icon ? 'has-icons-left' : ''
+  }`
 
   const [showPw, setShowPw] = useState(false)
   const handleEyeIconClick = () => setShowPw(!showPw)
@@ -48,7 +94,7 @@ export const Input: FC<InputProps> = ({ label, icon, error, customInput, isRequi
   }
 
   const verifiedInput = () => {
-    const VerifiedInput = () => <input { ...inputProps } />
+    const VerifiedInput = () => <input {...inputProps} />
     const VerifiedMaskedInput = withMask(VerifiedInput, mask as string)
     return mask ? <VerifiedMaskedInput /> : <VerifiedInput />
   }
@@ -67,7 +113,9 @@ export const Input: FC<InputProps> = ({ label, icon, error, customInput, isRequi
           {icon && <Icon icon={icon} />}
           {customInput ? customInput : verifiedInput()}
         </div>
-        {type === 'password' && <EyeIcon showPw={showPw} onClick={handleEyeIconClick} />}
+        {type === 'password' && (
+          <EyeIcon showPw={showPw} onClick={handleEyeIconClick} />
+        )}
       </div>
       {error && <p className='help is-danger'>{error}</p>}
     </>

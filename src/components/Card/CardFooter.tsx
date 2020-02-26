@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 interface CardFooterProps {
-  className?: string,
+  className?: string
   children?: ReactNode
 }
 

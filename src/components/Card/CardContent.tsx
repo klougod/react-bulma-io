@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 interface CardContentProps {
-  className?: string,
+  className?: string
   children?: ReactNode
 }
 

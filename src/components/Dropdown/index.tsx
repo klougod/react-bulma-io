@@ -69,15 +69,15 @@ export const Dropdown = ({
           {Children.toArray(children).map((item: ReactElement, index) =>
             item.type !== 'hr'
               ? React.cloneElement(item, {
-                key: index,
-                className: `${
-                  item.props.className ? item.props.className : ''
+                  key: index,
+                  className: `${
+                    item.props.className ? item.props.className : ''
                   }dropdown-item`
-              })
+                })
               : React.cloneElement(item, {
-                key: index,
-                className: 'dropdown-divider'
-              })
+                  key: index,
+                  className: 'dropdown-divider'
+                })
           )}
         </div>
       </div>
