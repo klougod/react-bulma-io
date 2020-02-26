@@ -1,7 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Tag = ({ color, className, text }: any) => (
+interface TagProps {
+  color?: string
+  className?: string
+  text?: ReactNode
+}
+
+export const Tag = ({ color, className, text }: TagProps) => (
   <span className={`tag ${color} ${className}`}>{text}</span>
 )
 
@@ -9,12 +14,6 @@ Tag.defaultProps = {
   color: '',
   className: '',
   text: ''
-}
-
-Tag.propTypes = {
-  color: PropTypes.string,
-  text: PropTypes.string,
-  className: PropTypes.string
 }
 
 export default Tag

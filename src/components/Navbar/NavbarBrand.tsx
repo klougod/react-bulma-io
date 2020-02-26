@@ -1,7 +1,22 @@
-import React, { Children, ReactElement, CSSProperties, MouseEvent } from 'react'
-import PropTypes from 'prop-types'
+import React, {
+  Children,
+  ReactElement,
+  CSSProperties,
+  MouseEvent,
+  ReactNode
+} from 'react'
 
-export const NavbarBrand = ({ className, menuRef, children }: any) => {
+interface NavbarBrandProps {
+  menuRef?: any
+  children?: ReactNode
+  className?: string
+}
+
+export const NavbarBrand = ({
+  className,
+  menuRef,
+  children
+}: NavbarBrandProps) => {
   const handleBurgerClick = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLTextAreaElement
     if (target.classList.contains('is-active')) {
@@ -52,12 +67,6 @@ export const NavbarBrand = ({ className, menuRef, children }: any) => {
 NavbarBrand.defaultProps = {
   className: '',
   menuRef: null
-}
-
-NavbarBrand.propTypes = {
-  className: PropTypes.string,
-  menuRef: PropTypes.any,
-  children: PropTypes.node
 }
 
 export default NavbarBrand
