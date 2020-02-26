@@ -1,14 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { InputHTMLAttributes, ReactNode } from 'react'
+
+interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement>{
+  checked?: boolean
+  onChange?: () => void
+  text?: ReactNode
+  wrapperClass?: string
+}
 
 export const Checkbox = ({
   text,
   checked,
-  name,
   className,
   wrapperClass,
-  onChange
-}: any) => (
+  onChange,
+  ...rest
+}: CheckboxProps) => (
   <div className={`checkbox ${wrapperClass}`}>
     <input
       type='checkbox'
@@ -16,7 +22,7 @@ export const Checkbox = ({
       className={className}
       checked={checked}
       onChange={onChange}
-      name={name}
+      {...rest}
     />
     <label htmlFor='bulma-io-checkbox' onChange={onChange}>
       &nbsp;{text}
@@ -27,19 +33,9 @@ export const Checkbox = ({
 Checkbox.defaultProps = {
   checked: false,
   onChange: null,
-  name: '',
   text: '',
   className: '',
   wrapperClass: ''
-}
-
-Checkbox.propTypes = {
-  checked: PropTypes.bool,
-  onChange: PropTypes.func,
-  name: PropTypes.string,
-  text: PropTypes.string,
-  className: PropTypes.string,
-  wrapperClass: PropTypes.string
 }
 
 export default Checkbox
