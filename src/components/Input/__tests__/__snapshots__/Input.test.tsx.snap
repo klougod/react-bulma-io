@@ -1,26 +1,311 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component test should render without crash without props 1`] = `
-<Fragment>
+exports[`Input component test should render correctly with a custom input 1`] = `
+<Component
+  className=""
+  customInput={<input />}
+  disabled={false}
+  error=""
+  isRequired={false}
+  label=""
+  mask=""
+  onChange={[Function]}
+  placeholder=""
+  type="text"
+  value=""
+>
   <div
-    className="field false"
+    className="field "
   >
     <div
-      className="control false null"
+      className="control  "
     >
-      <input
-        className="input "
-        disabled={false}
-        name="input"
-        onChange={null}
-        placeholder=""
-        type="text"
-        value=""
-      />
+      <input />
     </div>
+  </div>
+</Component>
+`;
+
+exports[`Input component test should render correctly with not existing mask 1`] = `
+<Component
+  className=""
+  disabled={false}
+  error=""
+  isRequired={false}
+  label=""
+  mask="inputMask"
+  onChange={[Function]}
+  placeholder=""
+  type="text"
+  value=""
+>
+  <div
+    className="field "
+  >
+    <div
+      className="control  "
+    >
+      <Component>
+        <t
+          guide={false}
+          mask={false}
+          render={[Function]}
+        >
+          <input
+            onBlur={[Function]}
+            onChange={[Function]}
+          />
+        </t>
+      </Component>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Input component test should render correctly with props 1`] = `
+<Component
+  className=""
+  disabled={false}
+  error="inputNotValid"
+  icon={
+    Object {
+      "icon": Array [
+        512,
+        512,
+        Array [],
+        "f042",
+        "M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z",
+      ],
+      "iconName": "adjust",
+      "prefix": "fas",
+    }
+  }
+  isRequired={true}
+  label="inputLabel"
+  mask="cpf"
+  onChange={[Function]}
+  placeholder=""
+  type="password"
+  value=""
+>
+  <label
+    className="label"
+  >
+    inputLabel
+    <span
+      className="has-text-danger"
+    >
+       *
+    </span>
+  </label>
+  <div
+    className="field has-addons has-addons-right"
+  >
+    <div
+      className="control is-expanded has-icons-left"
+    >
+      <Component
+        icon={
+          Object {
+            "icon": Array [
+              512,
+              512,
+              Array [],
+              "f042",
+              "M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z",
+            ],
+            "iconName": "adjust",
+            "prefix": "fas",
+          }
+        }
+      >
+        <span
+          className="icon is-small is-left"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f042",
+                  "M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z",
+                ],
+                "iconName": "adjust",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-adjust fa-w-16 "
+              data-icon="adjust"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+          </FontAwesomeIcon>
+        </span>
+      </Component>
+      <Component>
+        <t
+          guide={false}
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              ".",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              ".",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              "-",
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          render={[Function]}
+        >
+          <input
+            onBlur={[Function]}
+            onChange={[Function]}
+          />
+        </t>
+      </Component>
+    </div>
+    <Component
+      onClick={[Function]}
+      showPw={false}
+    >
+      <p
+        className="control"
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  576,
+                  512,
+                  Array [],
+                  "f06e",
+                  "M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z",
+                ],
+                "iconName": "eye",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-eye fa-w-18 "
+              data-icon="eye"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+          </FontAwesomeIcon>
+        </button>
+      </p>
+    </Component>
   </div>
   <p
     className="help is-danger"
-  />
-</Fragment>
+  >
+    inputNotValid
+  </p>
+</Component>
+`;
+
+exports[`Input component test should render without crash without props 1`] = `
+<Component
+  className=""
+  disabled={false}
+  error=""
+  isRequired={false}
+  label=""
+  mask=""
+  onChange={[Function]}
+  placeholder=""
+  type="text"
+  value=""
+>
+  <div
+    className="field "
+  >
+    <div
+      className="control  "
+    >
+      <VerifiedInput>
+        <input
+          className="input "
+          disabled={false}
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </VerifiedInput>
+    </div>
+  </div>
+</Component>
 `;

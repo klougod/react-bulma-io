@@ -1,9 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const EyeIcon = ({ showPw, onClick }: any) => (
+interface EyeIconProps {
+  showPw: Boolean
+  onClick: () => void
+}
+
+export const EyeIcon = ({ showPw, onClick }: EyeIconProps) => (
   <p className='control'>
     <button className='button' tabIndex={-1} onClick={onClick}>
       <FontAwesomeIcon icon={showPw ? faEyeSlash : faEye} />
@@ -12,13 +16,8 @@ export const EyeIcon = ({ showPw, onClick }: any) => (
 )
 
 EyeIcon.defaultProps = {
-  showPw: null,
+  showPw: false,
   onClick: () => {}
-}
-
-EyeIcon.propTypes = {
-  showPw: PropTypes.any,
-  onClick: PropTypes.func
 }
 
 export default EyeIcon
