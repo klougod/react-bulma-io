@@ -1,10 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode, OptionHTMLAttributes } from 'react'
 
-export const Option = ({ value, text, className, disabled }: any) => (
-  <option className={className} value={value} disabled={disabled}>
-    {text}
-  </option>
+interface OptionProps extends OptionHTMLAttributes<HTMLOptionElement> {
+  text?: ReactNode
+}
+
+export const Option = ({ text, ...rest }: OptionProps) => (
+  <option {...rest}>{text}</option>
 )
 
 Option.defaultProps = {
@@ -12,13 +13,6 @@ Option.defaultProps = {
   value: '',
   className: '',
   disabled: false
-}
-
-Option.propTypes = {
-  text: PropTypes.string,
-  value: PropTypes.any,
-  className: PropTypes.string,
-  disabled: PropTypes.bool
 }
 
 export default Option

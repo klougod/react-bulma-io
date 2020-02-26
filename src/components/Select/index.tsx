@@ -1,49 +1,65 @@
-import React, { Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
 import Option from './Option'
 import Icon from '../Icon'
 
 const optionType = (<Option />).type
 
-export const Select = ({
-  icon,
-  placeholder,
+interface SelectProps {
+  icon?: any
+  className?: string
+  onChange?: () => void
+  placeholder?: string
+  children?: ReactNode
+}
+
+interface SelectWrapperProps extends SelectProps {
+  noWrapper?: boolean
+}
+
+const SelectNoWrapper = ({
   className,
+  placeholder,
   onChange,
-  children,
-  noWrapper
-}: any) =>
-  noWrapper ? (
-    <div
-      className={`select ${className}`}
-      placeholder={placeholder}
-      onChange={onChange}
-    >
-      <select>
-        {Children.toArray(children).filter(
-          (c: ReactElement) => c.type === optionType
-        )}
-      </select>
-    </div>
-  ) : (
+  children
+}: SelectProps) => (
+  <div
+    className={`select ${className}`}
+    placeholder={placeholder}
+    onChange={onChange}
+  >
+    <select>
+      {Children.toArray(children).filter(
+        (c: ReactElement) => c.type === optionType
+      )}
+    </select>
+  </div>
+)
+
+const withWrapper = (Element: any) => ({
+  icon,
+  ...selectProps
+}: SelectProps) => {
+  return (
     <div className='field'>
       <div className={`control ${icon && 'has-icons-left'}`}>
         {icon && <Icon icon={icon} />}
-        <div
-          className={`select ${className}`}
-          placeholder={placeholder}
-          onChange={onChange}
-        >
-          <select>
-            {Children.toArray(children).filter(
-              (c: ReactElement) => c.type === optionType
-            )}
-          </select>
-        </div>
+        <Element {...selectProps} />
       </div>
     </div>
   )
+}
+
+export const Select = ({
+  noWrapper,
+  children,
+  ...selectProps
+}: SelectWrapperProps) => {
+  const SelectComponent = noWrapper
+    ? SelectNoWrapper
+    : withWrapper(SelectNoWrapper)
+  return <SelectComponent {...selectProps}>{children}</SelectComponent>
+}
 
 Select.defaultProps = {
   value: '',
@@ -52,15 +68,6 @@ Select.defaultProps = {
   className: '',
   onChange: null,
   noWrapper: false
-}
-
-Select.propTypes = {
-  value: PropTypes.string,
-  placeholder: PropTypes.string,
-  icon: PropTypes.any,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-  noWrapper: PropTypes.bool
 }
 
 export default Select
