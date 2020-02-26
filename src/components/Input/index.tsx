@@ -6,11 +6,11 @@ import EyeIcon from './EyeIcon'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   mask?: string
-  tip?: String
+  tip?: string
   isRequired?: Boolean
   icon?: any
-  label?: String
-  error?: String
+  label?: string
+  error?: string
   customInput?: ReactNode
 }
 
