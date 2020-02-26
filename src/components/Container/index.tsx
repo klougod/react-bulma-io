@@ -1,17 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Container = ({ className, children }: any) => (
+interface ContainerProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const Container = ({ className, children }: ContainerProps) => (
   <div className={`container ${className}`}>{children}</div>
 )
 
 Container.defaultProps = {
   className: ''
-}
-
-Container.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Container

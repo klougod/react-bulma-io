@@ -1,17 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const HeroFoot = ({ className, children }: any) => (
+interface HeroFootProps {
+  className?: string
+  children?: ReactNode
+}
+export const HeroFoot = ({ className, children }: HeroFootProps) => (
   <div className={`hero-foot ${className}`}>{children}</div>
 )
 
 HeroFoot.defaultProps = {
   className: ''
-}
-
-HeroFoot.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default HeroFoot
