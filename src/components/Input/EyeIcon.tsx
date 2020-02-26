@@ -3,7 +3,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface EyeIconProps {
-  showPw: Boolean
+  showPw: boolean
   onClick: () => void
 }
 

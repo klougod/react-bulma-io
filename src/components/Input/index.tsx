@@ -7,7 +7,7 @@ import EyeIcon from './EyeIcon'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   mask?: string
   tip?: string
-  isRequired?: Boolean
+  isRequired?: boolean
   icon?: any
   label?: string
   error?: string
