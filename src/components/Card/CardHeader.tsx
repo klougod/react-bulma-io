@@ -1,17 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const CardHeader = ({ className, children }: any) => (
+interface CardHeaderProps {
+  className?: string,
+  children?: ReactNode
+}
+
+export const CardHeader = ({ className, children }: CardHeaderProps) => (
   <header className={`card-header ${className}`}>{children}</header>
 )
 
 CardHeader.defaultProps = {
   className: ''
-}
-
-CardHeader.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default CardHeader

@@ -1,17 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const CardFooter = ({ className, children }: any) => (
+interface CardFooterProps {
+  className?: string,
+  children?: ReactNode
+}
+
+export const CardFooter = ({ className, children }: CardFooterProps) => (
   <header className={`card-footer ${className}`}>{children}</header>
 )
 
 CardFooter.defaultProps = {
   className: ''
-}
-
-CardFooter.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default CardFooter
