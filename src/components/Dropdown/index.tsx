@@ -3,11 +3,19 @@ import React, {
   useEffect,
   useRef,
   Children,
-  ReactElement
+  ReactElement,
+  ReactNode
 } from 'react'
-import PropTypes from 'prop-types'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+interface DropdownProps {
+  className?: String
+  btnClassName?: String
+  btnTitle?: String
+  customBtn?: ReactNode
+  children?: ReactNode
+}
 
 export const Dropdown = ({
   className,
@@ -15,7 +23,7 @@ export const Dropdown = ({
   btnTitle,
   customBtn,
   children
-}: any) => {
+}: DropdownProps) => {
   const [toggle, setToggle] = useState(false)
   const wrapperNode: any = useRef(null)
 
@@ -61,15 +69,15 @@ export const Dropdown = ({
           {Children.toArray(children).map((item: ReactElement, index) =>
             item.type !== 'hr'
               ? React.cloneElement(item, {
-                  key: index,
-                  className: `${
-                    item.props.className ? item.props.className : ''
+                key: index,
+                className: `${
+                  item.props.className ? item.props.className : ''
                   }dropdown-item`
-                })
+              })
               : React.cloneElement(item, {
-                  key: index,
-                  className: 'dropdown-divider'
-                })
+                key: index,
+                className: 'dropdown-divider'
+              })
           )}
         </div>
       </div>
@@ -81,13 +89,6 @@ Dropdown.defaultProps = {
   className: '',
   btnClassName: '',
   btnTitle: ''
-}
-
-Dropdown.propTypes = {
-  className: PropTypes.string,
-  btnClassName: PropTypes.string,
-  btnTitle: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Dropdown
