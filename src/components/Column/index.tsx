@@ -1,5 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
+interface ColumnProps {
+  tablet?: number
+  mobile?: number
+  desktop?: number
+  size?: number
+  className?: string
+  children?: string
+}
 
 export const Column = ({
   size,
@@ -8,7 +16,7 @@ export const Column = ({
   desktop,
   children,
   className
-}: any) => {
+}: ColumnProps) => {
   let renderSize = size ? `is-${size}` : ''
   renderSize = tablet ? `${renderSize} is-${tablet}-tablet` : renderSize
   renderSize = mobile ? `${renderSize} is-${mobile}-mobile` : renderSize
@@ -23,15 +31,6 @@ Column.defaultProps = {
   mobile: null,
   desktop: null,
   className: ''
-}
-
-Column.propTypes = {
-  tablet: PropTypes.number,
-  mobile: PropTypes.number,
-  desktop: PropTypes.number,
-  size: PropTypes.number,
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Column
