@@ -11,7 +11,7 @@ exports[`Button component test should render in loading state 1`] = `
 
 exports[`Button component test should render not in loading state 1`] = `
 <button
-  className="button buttonClass false"
+  className="button buttonClass "
   onClick={[Function]}
 >
   button text
@@ -20,7 +20,7 @@ exports[`Button component test should render not in loading state 1`] = `
 
 exports[`Button component test should render without crash with wrapper 1`] = `
 <button
-  className="button  false"
+  className="button  "
   onClick={[Function]}
 />
 `;

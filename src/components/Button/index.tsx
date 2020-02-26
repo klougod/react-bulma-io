@@ -1,10 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 
-export const Button = ({ className, text, isLoading, onClick }: any) => (
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text?: ReactNode
+  isLoading?: Boolean
+  onClick?: () => void
+}
+
+export const Button = ({ className, text, isLoading, onClick }: ButtonProps) => (
   <button
     onClick={onClick}
-    className={`button ${className} ${isLoading && 'is-loading'}`}
+    className={`button ${className} ${isLoading ? 'is-loading' : ''}`}
   >
     {text}
   </button>
@@ -15,13 +20,6 @@ Button.defaultProps = {
   onClick: () => {},
   text: '',
   className: ''
-}
-
-Button.propTypes = {
-  isLoading: PropTypes.bool,
-  onChange: PropTypes.func,
-  text: PropTypes.any,
-  className: PropTypes.string
 }
 
 export default Button
