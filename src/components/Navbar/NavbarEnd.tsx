@@ -1,7 +1,11 @@
-import React, { Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
-export const NavbarEnd = ({ className, children }: any) => (
+interface NavbarEndProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const NavbarEnd = ({ className, children }: NavbarEndProps) => (
   <div className={`navbar-end ${className}`}>
     {Children.toArray(children).map((item: ReactElement, index) =>
       React.cloneElement(item, {
@@ -14,11 +18,6 @@ export const NavbarEnd = ({ className, children }: any) => (
 
 NavbarEnd.defaultProps = {
   className: ''
-}
-
-NavbarEnd.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default NavbarEnd

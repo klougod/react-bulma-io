@@ -1,17 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Content = ({ className, children }: any) => (
+interface ContentProps {
+  className?: string
+  children?: ReactNode
+}
+export const Content = ({ className, children }: ContentProps) => (
   <div className={`content ${className}`}>{children}</div>
 )
 
 Content.defaultProps = {
   className: ''
-}
-
-Content.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Content

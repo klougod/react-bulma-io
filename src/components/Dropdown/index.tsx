@@ -3,11 +3,19 @@ import React, {
   useEffect,
   useRef,
   Children,
-  ReactElement
+  ReactElement,
+  ReactNode
 } from 'react'
-import PropTypes from 'prop-types'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+interface DropdownProps {
+  className?: String
+  btnClassName?: String
+  btnTitle?: String
+  customBtn?: ReactNode
+  children?: ReactNode
+}
 
 export const Dropdown = ({
   className,
@@ -15,7 +23,7 @@ export const Dropdown = ({
   btnTitle,
   customBtn,
   children
-}: any) => {
+}: DropdownProps) => {
   const [toggle, setToggle] = useState(false)
   const wrapperNode: any = useRef(null)
 
@@ -81,13 +89,6 @@ Dropdown.defaultProps = {
   className: '',
   btnClassName: '',
   btnTitle: ''
-}
-
-Dropdown.propTypes = {
-  className: PropTypes.string,
-  btnClassName: PropTypes.string,
-  btnTitle: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Dropdown

@@ -1,5 +1,4 @@
-import React, { Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
 import CardHeader from './CardHeader'
 import CardImage from './CardImage'
@@ -11,7 +10,12 @@ const cardImageType = (<CardImage />).type
 const cardContentType = (<CardContent />).type
 const cardFooterType = (<CardFooter />).type
 
-export const Card = ({ className, children }: any) => (
+interface CardProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const Card = ({ className, children }: CardProps) => (
   <div className={`card ${className}`}>
     {Children.toArray(children).filter(
       (c: ReactElement) => c.type === cardHeaderType
@@ -30,11 +34,6 @@ export const Card = ({ className, children }: any) => (
 
 Card.defaultProps = {
   className: ''
-}
-
-Card.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export { CardHeader, CardImage, CardContent, CardFooter }

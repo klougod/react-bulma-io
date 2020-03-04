@@ -1,17 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Section = ({ className, children }: any) => (
+interface SectionProps {
+  className?: string
+  children?: ReactNode
+}
+export const Section = ({ className, children }: SectionProps) => (
   <section className={`section ${className}`}>{children}</section>
 )
 
 Section.defaultProps = {
   className: ''
-}
-
-Section.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Section

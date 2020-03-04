@@ -1,5 +1,4 @@
-import React, { useRef, Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { useRef, Children, ReactElement, ReactNode } from 'react'
 import NavbarStart from './NavbarStart'
 import NavbarEnd from './NavbarEnd'
 import NavbarBrand from './NavbarBrand'
@@ -8,7 +7,13 @@ const navbarBrandType = (<NavbarBrand />).type
 const navbarStartType = (<NavbarStart />).type
 const navbarEndType = (<NavbarEnd />).type
 
-const Navbar = ({ className, menuClass, children }: any) => {
+interface NavbarProps {
+  className?: string
+  menuClass?: string
+  children?: ReactNode
+}
+
+const Navbar = ({ className, menuClass, children }: NavbarProps) => {
   const menuRef = useRef(null)
   const childrenArray = Children.toArray(children)
 
@@ -33,12 +38,6 @@ const Navbar = ({ className, menuClass, children }: any) => {
 Navbar.defaultProps = {
   className: '',
   menuClass: ''
-}
-
-Navbar.propTypes = {
-  className: PropTypes.string,
-  menuClass: PropTypes.string,
-  children: PropTypes.node
 }
 
 export { Navbar, NavbarBrand, NavbarEnd, NavbarStart }
