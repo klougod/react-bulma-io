@@ -2,16 +2,11 @@
   "name": "react-bulma-io",
   "version": "0.5.6",
   "description": "A simple react component library with wrappers for bulma style sheet framework",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "jsnext:main": "build/index.es.js",
   "scripts": {
     "build": "rollup -c",
-    "build:prod": "yarn test && yarn make-badges && yarn build && yarn format && yarn lint",
-    "lint": "standard",
-    "format": "prettier-standard --format",
-    "make-badges": "node_modules/.bin/jest-badges-readme",
-    "test": "jest --config=jest.config.json --coverage"
+    "lint": "eslint packages --ext ts,tsx",
+    "test": "jest --config=jest.config.json",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -34,6 +29,8 @@
     "react-text-mask": ">= 5.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@fortawesome/fontawesome-common-types": "^0.2.27",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -47,14 +44,27 @@
     "@types/react-fontawesome": "^1.6.4",
     "@types/react-text-mask": "^5.4.6",
     "bulma": "^0.8.0",
+    "coveralls": "^3.0.9",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import-helpers": "^1.0.2",
+    "eslint-plugin-jest": "^23.8.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "husky": "^4.2.3",
     "jest": "^24.9.0",
     "jest-watch-typeahead": "^0.4.2",
     "jsdom": "^16.2.0",
     "jsdom-global": "^3.0.2",
-    "prettier-standard": "^16.1.0",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-text-mask": "^5.4.3",
@@ -63,16 +73,9 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.25.3",
-    "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
-  },
-  "standard": {
-    "ignore": [
-      "node_modules/",
-      "build/"
-    ]
   },
   "publishConfig": {
     "access": "public"
