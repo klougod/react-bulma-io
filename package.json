@@ -49,6 +49,7 @@
     "bulma": "^0.8.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "jest": "^24.9.0",
     "jest-watch-typeahead": "^0.4.2",
     "jsdom": "^16.2.0",
@@ -72,9 +73,6 @@
       "node_modules/",
       "build/"
     ]
-  },
-  "dependencies": {
-    "enzyme-to-json": "^3.4.4"
   },
   "publishConfig": {
     "access": "public"
