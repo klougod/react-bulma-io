@@ -1,15 +1,19 @@
-import React, { Fragment, useState, ReactElement, MouseEvent } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, ReactElement, MouseEvent, ReactNode } from 'react'
 
 import TabLink from './TabLink'
 
-const Tabs = ({ children, className }: any) => {
+interface TabsProps {
+  className?: string
+  children?: ReactNode
+}
+
+const Tabs = ({ children, className }: TabsProps) => {
   const [arrayChildren, setChildren] = useState(
     React.Children.toArray(children)
   )
 
-  const changeTab = (e: MouseEvent<HTMLButtonElement>) => {
-    const key = (e.target as HTMLButtonElement).id
+  const changeTab = (e: MouseEvent<HTMLAnchorElement>): void => {
+    const key = (e.target as HTMLAnchorElement).id
     setChildren(
       arrayChildren.map((child: ReactElement) =>
         React.cloneElement(child, {
@@ -21,7 +25,7 @@ const Tabs = ({ children, className }: any) => {
   }
 
   return (
-    <Fragment>
+    <>
       <div className={`tabs ${className}`}>
         <ul>
           {arrayChildren.map((child: ReactElement, i) => (
@@ -45,17 +49,12 @@ const Tabs = ({ children, className }: any) => {
       >
         {arrayChildren.filter((c: ReactElement) => c.props.isActive)}
       </div>
-    </Fragment>
+    </>
   )
 }
 
 Tabs.defaultProps = {
   className: ''
-}
-
-Tabs.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export { TabLink, Tabs }

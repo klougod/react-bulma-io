@@ -1,7 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode, MouseEvent } from 'react'
 
-export const TabLink = ({ isActive, text, id, changeTab }: any) => {
+interface TabLinkProps {
+  className?: string
+  id?: string
+  text?: ReactNode
+  isActive?: boolean
+  changeTab?: (e: MouseEvent<HTMLAnchorElement>) => void
+  children?: ReactNode
+}
+
+export const TabLink = ({ isActive, text, id, changeTab }: TabLinkProps) => {
   return (
     <li className={isActive ? 'is-active' : ''}>
       {/* eslint-disable-next-line */}
@@ -23,15 +31,6 @@ TabLink.defaultProps = {
   text: '',
   isActive: false,
   changeTab: () => {}
-}
-
-TabLink.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  text: PropTypes.string,
-  isActive: PropTypes.bool,
-  changeTab: PropTypes.func,
-  children: PropTypes.node
 }
 
 export default TabLink

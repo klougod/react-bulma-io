@@ -1,30 +1,20 @@
-import React, { Fragment, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { InputHTMLAttributes, ReactNode, useState, FC } from 'react'
 import MaskedInput from 'react-text-mask'
 
 import Icon from '../Icon'
 import EyeIcon from './EyeIcon'
 
-export const Input = ({
-  value,
-  label,
-  icon,
-  type,
-  error,
-  name,
-  customInput,
-  placeholder,
-  isRequired,
-  className,
-  onChange,
-  mask,
-  tip,
-  disabled
-}: any) => {
-  const [showPw, setShowPw] = useState(false)
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  mask?: string
+  tip?: string
+  isRequired?: boolean
+  icon?: any
+  label?: string
+  error?: string
+  customInput?: ReactNode
+}
 
-  const handleEyeIconClick = () => setShowPw(!showPw)
-
+export const withMask = (input: any, mask: string) => () => {
   const possibleMasks = {
     cellphone: [
       '(',
@@ -66,53 +56,60 @@ export const Input = ({
     return selectedMask ? selectedMask : false
   }
 
+  const inputProps = {
+    ...input.props,
+    guide: false,
+    mask: inputMask()
+  }
+
+  return <MaskedInput {...inputProps} />
+}
+
+export const Input: FC<InputProps> = ({
+  label,
+  icon,
+  error,
+  customInput,
+  isRequired,
+  mask,
+  tip,
+  className,
+  type,
+  ...rest
+}: InputProps) => {
+  const fieldClass = `field ${
+    type === 'password' ? 'has-addons has-addons-right' : ''
+  }`
+  const controlClass = `control ${type === 'password' ? 'is-expanded' : ''} ${
+    icon ? 'has-icons-left' : ''
+  }`
+
+  const [showPw, setShowPw] = useState(false)
+  const handleEyeIconClick = () => setShowPw(!showPw)
+
+  const inputProps = {
+    className: `input ${className}`,
+    type: type === 'password' ? (!showPw ? 'password' : 'text') : type,
+    ...rest
+  }
+
   const verifiedInput = () => {
-    if (mask) {
-      return (
-        <MaskedInput
-          mask={inputMask()}
-          name={name}
-          guide={false}
-          className={`input ${className}`}
-          value={value}
-          type={type === 'password' ? (!showPw ? 'password' : 'text') : type}
-          placeholder={placeholder}
-          onChange={onChange}
-          disabled={disabled}
-        />
-      )
-    } else {
-      return (
-        <input
-          name={name}
-          className={`input ${className}`}
-          value={value}
-          type={type === 'password' ? (!showPw ? 'password' : 'text') : type}
-          placeholder={placeholder}
-          onChange={onChange}
-          disabled={disabled}
-        />
-      )
-    }
+    const VerifiedInput = () => <input {...inputProps} />
+    const VerifiedMaskedInput = withMask(VerifiedInput, mask as string)
+    return mask ? <VerifiedMaskedInput /> : <VerifiedInput />
   }
 
   return (
-    <Fragment>
+    <>
       {label && (
-        <label className='label' htmlFor={name}>
+        <label className='label'>
           {label}
           {isRequired && <span className='has-text-danger'> *</span>}
           {tip}
         </label>
       )}
-      <div
-        className={`field ${type === 'password' &&
-          'has-addons has-addons-right'}`}
-      >
-        <div
-          className={`control ${type === 'password' && 'is-expanded'} ${icon &&
-            'has-icons-left'}`}
-        >
+      <div className={fieldClass}>
+        <div className={controlClass}>
           {icon && <Icon icon={icon} />}
           {customInput ? customInput : verifiedInput()}
         </div>
@@ -120,8 +117,8 @@ export const Input = ({
           <EyeIcon showPw={showPw} onClick={handleEyeIconClick} />
         )}
       </div>
-      <p className='help is-danger'>{error}</p>
-    </Fragment>
+      {error && <p className='help is-danger'>{error}</p>}
+    </>
   )
 }
 
@@ -129,32 +126,13 @@ Input.defaultProps = {
   value: '',
   label: '',
   type: 'text',
-  icon: null,
   isRequired: false,
   error: '',
-  name: 'input',
   mask: '',
   placeholder: '',
-  customInput: null,
   className: '',
-  onChange: null,
+  onChange: () => {},
   disabled: false
-}
-
-Input.propTypes = {
-  type: PropTypes.string,
-  value: PropTypes.string,
-  label: PropTypes.string,
-  mask: PropTypes.string,
-  placeholder: PropTypes.string,
-  icon: PropTypes.any,
-  isRequired: PropTypes.bool,
-  error: PropTypes.string,
-  name: PropTypes.string,
-  customInput: PropTypes.node,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-  disabled: PropTypes.bool
 }
 
 export default Input

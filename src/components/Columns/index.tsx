@@ -1,17 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Columns = ({ className, children }: any) => (
+interface ColumnsProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const Columns = ({ className, children }: ColumnsProps) => (
   <div className={`columns ${className}`}>{children}</div>
 )
 
 Columns.defaultProps = {
   className: ''
-}
-
-Columns.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Columns

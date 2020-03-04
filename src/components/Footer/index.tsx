@@ -1,17 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-export const Footer = ({ className, children }: any) => (
+interface FooterProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const Footer = ({ className, children }: FooterProps) => (
   <footer className={`footer ${className}`}>{children}</footer>
 )
 
 Footer.defaultProps = {
   className: ''
-}
-
-Footer.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Footer

@@ -29,7 +29,6 @@ exports[`Checkbox component test should render without crash without props 1`] =
     checked={false}
     className=""
     id="bulma-io-checkbox"
-    name=""
     onChange={null}
     type="checkbox"
   />

@@ -1,5 +1,4 @@
-import React, { Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
 import HeroHead from './HeroHead'
 import HeroBody from './HeroBody'
@@ -9,7 +8,12 @@ const heroHeadType = (<HeroHead />).type
 const heroBodyType = (<HeroBody />).type
 const heroFootType = (<HeroFoot />).type
 
-export const Hero = ({ className, children }: any) => (
+interface HeroProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const Hero = ({ className, children }: HeroProps) => (
   <section className={`hero ${className}`}>
     {Children.toArray(children).filter(
       (c: ReactElement) => c.type === heroHeadType
@@ -25,11 +29,6 @@ export const Hero = ({ className, children }: any) => (
 
 Hero.defaultProps = {
   className: ''
-}
-
-Hero.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default Hero

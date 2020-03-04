@@ -1,7 +1,11 @@
-import React, { Children, ReactElement } from 'react'
-import PropTypes from 'prop-types'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
-export const NavbarStart = ({ className, children }: any) => (
+interface NavbarStartProps {
+  className?: string
+  children?: ReactNode
+}
+
+export const NavbarStart = ({ className, children }: NavbarStartProps) => (
   <div className={`navbar-start ${className}`}>
     {Children.toArray(children).map((item: ReactElement, index) =>
       React.cloneElement(item, {
@@ -14,11 +18,6 @@ export const NavbarStart = ({ className, children }: any) => (
 
 NavbarStart.defaultProps = {
   className: ''
-}
-
-NavbarStart.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
 }
 
 export default NavbarStart
