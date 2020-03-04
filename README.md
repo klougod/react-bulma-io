@@ -1,10 +1,17 @@
-| Statements                                                                                      | Branches                                                                              | Functions                                                                              | Lines                                                                                      | Build                                                                                                                    |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| ![Statements](https://img.shields.io/badge/Coverage-94.31%25-brightgreen.svg 'Make me better!') | ![Branches](https://img.shields.io/badge/Coverage-51.52%25-red.svg 'Make me better!') | ![Functions](https://img.shields.io/badge/Coverage-76.92%25-red.svg 'Make me better!') | ![Lines](https://img.shields.io/badge/Coverage-93.43%25-brightgreen.svg 'Make me better!') | [![Build](https://travis-ci.org/klougod/react-bulma-io.svg?branch=master)](https://travis-ci.org/klougod/react-bulma-io) |
+<div align="center">
+
+[![npm](https://img.shields.io/npm/v/react-bulma-io?color=%2300D1B2)](https://www.npmjs.com/package/react-bulma-io)<space><space>
+[![coverage](https://img.shields.io/coveralls/github/klougod/react-bulma-io?color=%2300D1B2)](https://coveralls.io/github/klougod/react-bulma-io?branch=master)
+
+</div>
 
 # React Bulma Io
 
-A simple library of wrappers components to Bulma framework.
+<h3 align="center">
+  A simple library of wrappers components to Bulma framework.
+</h3>
+
+<br>
 
 ## Getting Started
 

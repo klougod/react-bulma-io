@@ -28,3 +28,5 @@ README.md
 README-template.md
 UPGRADE.md
 .storybook
+__tests__
+.github
