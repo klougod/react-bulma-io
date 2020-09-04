@@ -27,4 +27,5 @@ CHANGELOG.md
 UPGRADE.md
 .storybook
 */**/__tests__
+build/setupTests.d.ts
 .github
