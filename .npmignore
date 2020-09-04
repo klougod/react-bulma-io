@@ -24,9 +24,7 @@ config
 demo
 dist
 CHANGELOG.md
-README.md
-README-template.md
 UPGRADE.md
 .storybook
-__tests__
+*/**/__tests__
 .github
