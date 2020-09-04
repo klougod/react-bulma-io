@@ -2,8 +2,10 @@
   "name": "react-bulma-io",
   "version": "0.5.6",
   "description": "A simple react component library with wrappers for bulma style sheet framework",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "NODE_ENV=production rollup -c",
     "lint": "eslint packages --ext ts,tsx",
     "test": "jest --config=jest.config.json",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
