@@ -1,6 +1,7 @@
 <div align="center">
 
 [![npm](https://img.shields.io/npm/v/react-bulma-io?color=%2300D1B2)](https://www.npmjs.com/package/react-bulma-io)<space><space>
+[![Build Status](https://travis-ci.org/klougod/react-bulma-io.svg?branch=master)](https://travis-ci.org/klougod/react-bulma-io)
 [![Coverage Status](https://coveralls.io/repos/github/klougod/react-bulma-io/badge.svg?branch=master)](https://coveralls.io/github/klougod/react-bulma-io?branch=master)
 
 </div>
