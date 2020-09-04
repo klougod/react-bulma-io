@@ -13,7 +13,7 @@ jobs:
         - yarn test
         - yarn build
     - stage: npm release
-      script: yarn build:prod
+      script: yarn build
       deploy:
         edge: true
         provider: npm
